@@ -14,10 +14,23 @@ games {
 
 ui_page 'web/build/index.html'
 
-client_script "client/**/*"
+ox_lib 'locale'
+shared_scripts {
+    '@ox_lib/init.lua',
+    '@qbx_core/modules/lib.lua'
+}
+
+client_scripts {
+    '@qbx_core/modules/playerdata.lua',
+    "client/**/*"
+}
+
 server_script "server/**/*"
 
 files {
 	'web/build/index.html',
 	'web/build/**/*',
+  'locales/*.json',
+  'config/shared.lua',
+  "config/client.lua",
 }
